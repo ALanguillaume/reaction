@@ -3,7 +3,7 @@ name: pass_env_var
 on: [push]
 
 env:  
-  ENV_VAR1: ${{ env.ENV_VAR }}
+  # ENV_VAR1: ${{ env.ENV_VAR }}
   ENV_VAR2: ${{ vars.ENV_VAR }}
   SECRET: ${{ secrets.SECRET }}
 
