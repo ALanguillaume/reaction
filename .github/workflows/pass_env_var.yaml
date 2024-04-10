@@ -1,0 +1,16 @@
+on: [push]
+
+name: pass_env_var
+
+jobs:
+  pass_env_var:
+    runs-on: ubuntu-latest
+    container: rocker/r-base:4.3.2
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pass secret to R script
+        env:
+          ENV_VAR: ${{ env.ENV_VAR }}
+          SECRET: ${{ secrets.SECRET }}
+        run: Rscript test_env_var_available.R
