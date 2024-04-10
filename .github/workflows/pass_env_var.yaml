@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Pass secret to R script
+        run: Rscript test_env_var_available.R
         env:
           ENV_VAR: ${{ env.ENV_VAR }}
           SECRET: ${{ secrets.SECRET }}
-        run: Rscript test_env_var_available.R
